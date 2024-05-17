@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- タイトルトップ -->
+<!-- 神の許しを請うボタンを設置し、それを押すと始まるイメージ -->
+    <div><h1>タイトル : 神の赦し</h1></div>
+    <!-- やる気を入力するエリア -->
+    <div>
+        <h2>やる気入力エリア</h2>
+        <p>あなたの今のやる気を入力してください</p>
+        <p>0%</p>
+        <input type="range" name="motivation" min="0" max="99" id="motivationValue">
+        <p>99%</p>
+        <button id="sendMotivation">送信</button>
+    </div>
+
+    <div><h2>タスク入力エリア</h2></div>
+        <p>あなたが今やるべきことを教えて下さい</p>
+        <input type="text" name="toDo"id="toDo">
+        <button id="sendToDo">送信</button>
+    
+    <div>
+        <h2>やりたいことを入力するエリア</h2>
+        <input type="text" name="want1"id="want1">
+        <input type="text" name="want2"id="want2">
+        <input type="text" name="want2"id="want3">
+    </div>
+
+    <div>
+        <h2>結果を表示するエリア</h2>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="/js/script.js"></script>
+
+</body>
+</html>
