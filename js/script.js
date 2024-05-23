@@ -4,23 +4,39 @@ var want1
 var want2
 var want3
 
+// スタートとスタートボタンの仕様
+function start(){
+    $("#wrap_input").hide();
+    $("#wrap_result").hide();
+    $("#start").on("click",function(){
+        $("#wrap_start h1").fadeOut();
+        $("#wrap_start button").fadeOut();
+        $("#wrap_input").fadeIn();
+    })
+};
+
+// モチベーションバーの表示
+function motivationDisplay(){
+    $("#motivationValue").on("input",function(){
+        var currentMotivation = $(this).val();
+        $("#motivationDisplay").text(currentMotivation+"%");
+    })
+    
+};
+
 // 結果の表示
+
 function result(){
     $('#send').on("click",function(){
         motivation=$("#motivationValue").val()
-        console.log(motivation)
         need=$("#need").val()
-        console.log(need)
         want1=$("#want1").val()
-        console.log(want1);
         want2=$("#want2").val()
-        console.log(want2);
         want3=$("#want3").val()
-        console.log(want3);
         
-        // randomNum = Math.floor(Math.random()*(99+1))
-        randomNum=0
-        console.log(randomNum)
+        randomNum = Math.floor(Math.random()*(99+1))
+        let threshold = 100 - motivation;
+        
 
         a=100-motivation
         console.log("a="+a)
@@ -37,26 +53,34 @@ function result(){
 
         
         if(randomNum <= 99 && randomNum >= (100-motivation)){
-            result = need;
+            $("#resultImg").attr("src","img/need.png")
+            $("#resultText").text(need)
+            // $("#resultText").attr("class","text-white")
         } else if (randomNum<=b1 && randomNum>= b2){
-            result=want1
+            $("#resultImg").attr("src","img/want.png")
+            $("#resultText").text(want1)
+            // $("#resultText").attr("class","text-black")
         }else if (randomNum<=c1 && randomNum>= c2){
-            result=want2
+            $("#resultImg").attr("src","img/want.png")
+            $("#resultText").text(want2)
+            // $("#resultText").attr("class","text-black")
         }else if (randomNum<=d1 && randomNum>= 0){
-            result=want3
+            $("#resultImg").attr("src","img/want.png")
+            $("#resultText").text(want3)
+            // $("#resultText").attr("class","text-black")
         }
         console.log(result)
+        $("#wrap_start").fadeOut();
+        $("#wrap_input").fadeOut();
+        $("#wrap_result").fadeIn();
         $("#result").append(result)
     })
 };
-// motivationが60のとき
-// 99~40 (99>=random num>=100-motivation) = toDo
-// 39~27 (a=100-motivation-1 >=random num >=a-(((99-motivation)/3)-1) )
-// 26~14
-// 13~0
 
 // 最初に読み込むドキュメント
 $(document).ready(function() {
+    start();
+    motivationDisplay();
     result();
 });
 
