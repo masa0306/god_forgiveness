@@ -72,7 +72,7 @@ function result(){
         console.log(result)
         $("#wrap_start").fadeOut();
         $("#wrap_input").fadeOut();
-        $("#wrap_result").fadeIn();
+        $("#wrap_result").fadeIn(5000);
         $("#result").append(result)
     })
 };
