@@ -23,7 +23,12 @@
     flex flex-col justify-between gap-8 rounded-lg shadow-xl">
         <div class="">
             <h2 class="font-serif text-3xl text-white">What do you need to do?</h2>
-            <input type="text" name="need" id="need" class="w-full mt-2 p-2 bg-gray-700 text-white rounded-mg" placeholder="Programing study">
+            <select name="" id="displayNeeds" class="mr-8">
+            </select>
+            <button id="createNeed">+</button>
+            <div id="dialogNeed" class="hidden">
+                <input type="text" name="need" id="inputNeed" class="w-full mt-2 p-2 bg-gray-700 text-white rounded-mg" placeholder="Programing study">
+            </div>
         </div>
         <div class="mt-8">
             <h2 class="font-serif text-3xl text-white">How motivated are you feeling to do it?</h2>
@@ -54,6 +59,8 @@
     </div>
 </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-darkness/jquery-ui.css">
+<script src="js/script.js"></script>
 </body>
 </html>
