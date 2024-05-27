@@ -7,47 +7,52 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body class="bg-gray-900">
+<body class="bg-gray-900 text-whitefont-sans">
 <!-- タイトルトップ -->
 <!-- 神の許しを請うボタンを設置し、それを押すと始まるイメージ -->
 <div id="wrap" class="relative w-screen h-screen flex items-center justify-center">
     <div id="wrap_start" class="font-serif text-center">
-        <h1 class="text-8xl text-white drop-shadow-lg mb-8 animate-bounce top-2/3">God's forgiveness</h1>
+        <h1 class="text-8xl text-white drop-shadow-lg mb-8 animate-pulse top-2/3">God's forgiveness</h1>
         <img src="img/top.png" alt="" class="absolute w-full h-full top-0 left-0 object-cover opacity-50">
         <button id="start" class="px-10 py-5 bg-white text-blue-600 font-bold rounded-full shadow-lg hover:shadow-2xl transition-transform transform hover:scale-110">START</button>
     </div>
-    <!-- やる気を入力するエリア -->
+<!-- 入力エリア -->
     <div id="wrap_input" 
     class="hidden z-20 bg-gray-800 bg-opacity-90 px-20 py-20 font-serif absolute 
     top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3
     flex flex-col justify-between gap-8 rounded-lg shadow-xl">
-        <div class="">
+    <!-- needエリア -->
+        <div>
             <h2 class="font-serif text-3xl text-white">What do you need to do?</h2>
-            <select name="" id="displayNeeds" class="mr-8">
+            <select name="" id="displayNeeds" class="mr-4 p-2 bg-gray-700 text-white rounded-md px-2 py-1">
             </select>
-            <button id="createNeed">+</button>
-            <div id="dialogNeed" class="hidden">
-                <input type="text" name="need" id="inputNeed" class="w-full mt-2 p-2 bg-gray-700 text-white rounded-mg" placeholder="Programing study">
+            <button id="createNeed" class="px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-blue-700">+</button>
+            <div id="dialogNeed" class="hidden mt-4">
+                <input type="text" name="need" id="inputNeed" class="w-full mt-2 p-2 bg-gray-700 text-white rounded-md" placeholder="Programing study">
             </div>
         </div>
+    <!-- motivationエリア -->
         <div class="mt-8">
             <h2 class="font-serif text-3xl text-white">How motivated are you feeling to do it?</h2>
-            <div class="flex mt-2 w-full items-center">
-                <p class="mx-2 font-serif text-white">0%</p>
+            <div class="flex mt-2 items-center">
+                <p class="mr-2 font-serif text-white">0%</p>
                     <input type="range" name="motivation" min="0" max="100" step="10" id="motivationValue" class="flex-grow mx-2 bg-gray-700">
-                <p class="mx-2 font-serif text-white">100%</p>
+                <p class="ml-2 font-serif text-white">100%</p>
             </div>
             <div class="w-full text-center mt-2">
                 <span class="text-white text-lg" id="motivationDisplay">50%</span>
             </div>
         </div>
+    <!-- wantエリア -->
         <div>
             <h2 class="text-3xl text-white">What do you want to do?</h2>
-            <div class="mt-2 space-y-2">
-                <input type="text" name="want1" id="want1" class="w-full p-2 bg-gray-700 text-white rounded-md" placeholder="taking nap for 20mins">
-                <input type="text" name="want2" id="want2" class="w-full p-2 bg-gray-700 text-white rounded-md" placeholder="watching Netflix for 1 episode of xx">
-                <input type="text" name="want3" id="want3" class="w-full p-2 bg-gray-700 text-white rounded-md" placeholder="taking bath">
+            <div class="mt-2 space-y-2 flex flew-wrap gap-4 mb-2" id="displayWants">
             </div>
+            <button id="createWant" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">+</button>
+            <div id="dialogWant" class="hidden">
+                <input type="text" name="need" id="inputWant" class="w-full mt-2 p-2 bg-gray-700 text-white rounded-md">
+            </div>    
+
         </div>
         <div class="flex justify-center mt-8">
             <button id="send" class="bg-blue-600 px-10 py-2 text-white font-bold rounded-full hover:bg-blue-700 hover::scale-110">Ask for forgiveness</button>
